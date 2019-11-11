@@ -852,12 +852,9 @@ POSIT_UTYPE util_neg(POSIT_UTYPE p, int nbits)
 
 int main(int argc, char *argv[])
 {
-    auto p = Posit(5, 1);
-
-    for (unsigned i = 0; i < (unsigned)(1 << p.nbits()); i++) {
-        p.setBits(i);
-        p.print();
-    }
-
+    auto a = Posit32(0.1);
+    auto b = Posit32(0.2);
+    auto c = a+b;
+    c.print(); //build with command emcc test.cpp -s WASM=1 -o test.html -std=c++11
     return 0;
 }
